@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition>
+
+        <p:dialog id="EstadomaterialEditDlg" widgetVar="EstadomaterialEditDialog" modal="true" resizable="false" appendTo="@(body)" header="#{bundle.EditEstadomaterialTitle}">
+            <h:form id="EstadomaterialEditForm">
+                <h:panelGroup id="display">
+                    <p:panelGrid columns="2" rendered="#{estadomaterialController.selected != null}">
+                        <p:outputLabel value="#{bundle.EditEstadomaterialLabel_idEstadoMaterial}" for="idEstadoMaterial" />
+                        <p:inputText id="idEstadoMaterial" value="#{estadomaterialController.selected.idEstadoMaterial}" title="#{bundle.EditEstadomaterialTitle_idEstadoMaterial}" required="true" requiredMessage="#{bundle.EditEstadomaterialRequiredMessage_idEstadoMaterial}"/>
+                        <p:outputLabel value="#{bundle.EditEstadomaterialLabel_descripcion}" for="descripcion" />
+                        <p:inputText id="descripcion" value="#{estadomaterialController.selected.descripcion}" title="#{bundle.EditEstadomaterialTitle_descripcion}" />
+                    </p:panelGrid>
+                    <p:commandButton actionListener="#{estadomaterialController.update}" value="#{bundle.Save}" update="display,:EstadomaterialListForm:datalist,:growl" oncomplete="handleSubmit(args, 'EstadomaterialEditDialog');"/>
+                    <p:commandButton value="#{bundle.Cancel}" onclick="EstadomaterialEditDialog.hide()"/>
+                </h:panelGroup>
+            </h:form>
+        </p:dialog>
+
+    </ui:composition>
+</html>

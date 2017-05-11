@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition>
+
+        <p:dialog id="TipoformatoEditDlg" widgetVar="TipoformatoEditDialog" modal="true" resizable="false" appendTo="@(body)" header="#{bundle.EditTipoformatoTitle}">
+            <h:form id="TipoformatoEditForm">
+                <h:panelGroup id="display">
+                    <p:panelGrid columns="2" rendered="#{tipoformatoController.selected != null}">
+                        <p:outputLabel value="#{bundle.EditTipoformatoLabel_idTipoFormato}" for="idTipoFormato" />
+                        <p:inputText id="idTipoFormato" value="#{tipoformatoController.selected.idTipoFormato}" title="#{bundle.EditTipoformatoTitle_idTipoFormato}" required="true" requiredMessage="#{bundle.EditTipoformatoRequiredMessage_idTipoFormato}"/>
+                        <p:outputLabel value="#{bundle.EditTipoformatoLabel_descripcion}" for="descripcion" />
+                        <p:inputText id="descripcion" value="#{tipoformatoController.selected.descripcion}" title="#{bundle.EditTipoformatoTitle_descripcion}" />
+                    </p:panelGrid>
+                    <p:commandButton actionListener="#{tipoformatoController.update}" value="#{bundle.Save}" update="display,:TipoformatoListForm:datalist,:growl" oncomplete="handleSubmit(args, 'TipoformatoEditDialog');"/>
+                    <p:commandButton value="#{bundle.Cancel}" onclick="TipoformatoEditDialog.hide()"/>
+                </h:panelGroup>
+            </h:form>
+        </p:dialog>
+
+    </ui:composition>
+</html>

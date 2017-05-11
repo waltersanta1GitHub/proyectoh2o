@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition>
+
+        <p:dialog id="FormatosdetalleEditDlg" widgetVar="FormatosdetalleEditDialog" modal="true" resizable="false" appendTo="@(body)" header="#{bundle.EditFormatosdetalleTitle}">
+            <h:form id="FormatosdetalleEditForm">
+                <h:panelGroup id="display">
+                    <p:panelGrid columns="2" rendered="#{formatosdetalleController.selected != null}">
+                        <p:outputLabel value="#{bundle.EditFormatosdetalleLabel_nombreResiduo}" for="nombreResiduo" />
+                        <p:inputText id="nombreResiduo" value="#{formatosdetalleController.selected.nombreResiduo}" title="#{bundle.EditFormatosdetalleTitle_nombreResiduo}" required="true" requiredMessage="#{bundle.EditFormatosdetalleRequiredMessage_nombreResiduo}"/>
+                        <p:outputLabel value="#{bundle.EditFormatosdetalleLabel_idLinea}" for="idLinea" />
+                        <p:inputText id="idLinea" value="#{formatosdetalleController.selected.idLinea}" title="#{bundle.EditFormatosdetalleTitle_idLinea}" required="true" requiredMessage="#{bundle.EditFormatosdetalleRequiredMessage_idLinea}"/>
+                        <p:outputLabel value="#{bundle.EditFormatosdetalleLabel_cantidad}" for="cantidad" />
+                        <p:inputText id="cantidad" value="#{formatosdetalleController.selected.cantidad}" title="#{bundle.EditFormatosdetalleTitle_cantidad}" required="true" requiredMessage="#{bundle.EditFormatosdetalleRequiredMessage_cantidad}"/>
+                        <p:outputLabel value="#{bundle.EditFormatosdetalleLabel_fechaTempA}" for="fechaTempA" />
+                        <p:calendar id="fechaTempA" pattern="MM/dd/yyyy" value="#{formatosdetalleController.selected.fechaTempA}" title="#{bundle.EditFormatosdetalleTitle_fechaTempA}"  showOn="button"/>
+                        <p:outputLabel value="#{bundle.EditFormatosdetalleLabel_fechaTempB}" for="fechaTempB" />
+                        <p:calendar id="fechaTempB" pattern="MM/dd/yyyy" value="#{formatosdetalleController.selected.fechaTempB}" title="#{bundle.EditFormatosdetalleTitle_fechaTempB}"  showOn="button"/>
+                        <p:outputLabel value="#{bundle.EditFormatosdetalleLabel_fechaTempC}" for="fechaTempC" />
+                        <p:calendar id="fechaTempC" pattern="MM/dd/yyyy" value="#{formatosdetalleController.selected.fechaTempC}" title="#{bundle.EditFormatosdetalleTitle_fechaTempC}"  showOn="button"/>
+                        <p:outputLabel value="#{bundle.EditFormatosdetalleLabel_fechaTempD}" for="fechaTempD" />
+                        <p:calendar id="fechaTempD" pattern="MM/dd/yyyy" value="#{formatosdetalleController.selected.fechaTempD}" title="#{bundle.EditFormatosdetalleTitle_fechaTempD}"  showOn="button"/>
+                        <p:outputLabel value="#{bundle.EditFormatosdetalleLabel_horaTempA}" for="horaTempA" />
+                        <p:calendar id="horaTempA" pattern="HH:mm:ss" value="#{formatosdetalleController.selected.horaTempA}" title="#{bundle.EditFormatosdetalleTitle_horaTempA}"  showOn="button"/>
+                        <p:outputLabel value="#{bundle.EditFormatosdetalleLabel_horaTempB}" for="horaTempB" />
+                        <p:calendar id="horaTempB" pattern="HH:mm:ss" value="#{formatosdetalleController.selected.horaTempB}" title="#{bundle.EditFormatosdetalleTitle_horaTempB}"  showOn="button"/>
+                        <p:outputLabel value="#{bundle.EditFormatosdetalleLabel_horaTempC}" for="horaTempC" />
+                        <p:calendar id="horaTempC" pattern="HH:mm:ss" value="#{formatosdetalleController.selected.horaTempC}" title="#{bundle.EditFormatosdetalleTitle_horaTempC}"  showOn="button"/>
+                        <p:outputLabel value="#{bundle.EditFormatosdetalleLabel_horaTempD}" for="horaTempD" />
+                        <p:calendar id="horaTempD" pattern="HH:mm:ss" value="#{formatosdetalleController.selected.horaTempD}" title="#{bundle.EditFormatosdetalleTitle_horaTempD}"  showOn="button"/>
+                        <p:outputLabel value="#{bundle.EditFormatosdetalleLabel_enteroTempA}" for="enteroTempA" />
+                        <p:inputText id="enteroTempA" value="#{formatosdetalleController.selected.enteroTempA}" title="#{bundle.EditFormatosdetalleTitle_enteroTempA}" />
+                        <p:outputLabel value="#{bundle.EditFormatosdetalleLabel_enteroTempB}" for="enteroTempB" />
+                        <p:inputText id="enteroTempB" value="#{formatosdetalleController.selected.enteroTempB}" title="#{bundle.EditFormatosdetalleTitle_enteroTempB}" />
+                        <p:outputLabel value="#{bundle.EditFormatosdetalleLabel_enteroTempC}" for="enteroTempC" />
+                        <p:inputText id="enteroTempC" value="#{formatosdetalleController.selected.enteroTempC}" title="#{bundle.EditFormatosdetalleTitle_enteroTempC}" />
+                        <p:outputLabel value="#{bundle.EditFormatosdetalleLabel_enteroTempD}" for="enteroTempD" />
+                        <p:inputText id="enteroTempD" value="#{formatosdetalleController.selected.enteroTempD}" title="#{bundle.EditFormatosdetalleTitle_enteroTempD}" />
+                        <p:outputLabel value="#{bundle.EditFormatosdetalleLabel_booleanoTempA}" for="booleanoTempA" />
+                        <p:selectBooleanCheckbox id="booleanoTempA" value="#{formatosdetalleController.selected.booleanoTempA}" />
+                        <p:outputLabel value="#{bundle.EditFormatosdetalleLabel_booleanoTempB}" for="booleanoTempB" />
+                        <p:selectBooleanCheckbox id="booleanoTempB" value="#{formatosdetalleController.selected.booleanoTempB}" />
+                        <p:outputLabel value="#{bundle.EditFormatosdetalleLabel_booleanoTempC}" for="booleanoTempC" />
+                        <p:selectBooleanCheckbox id="booleanoTempC" value="#{formatosdetalleController.selected.booleanoTempC}" />
+                        <p:outputLabel value="#{bundle.EditFormatosdetalleLabel_booleanoTempD}" for="booleanoTempD" />
+                        <p:selectBooleanCheckbox id="booleanoTempD" value="#{formatosdetalleController.selected.booleanoTempD}" />
+                        <p:outputLabel value="#{bundle.EditFormatosdetalleLabel_cadenaTempA}" for="cadenaTempA" />
+                        <p:inputText id="cadenaTempA" value="#{formatosdetalleController.selected.cadenaTempA}" title="#{bundle.EditFormatosdetalleTitle_cadenaTempA}" />
+                        <p:outputLabel value="#{bundle.EditFormatosdetalleLabel_cadenaTempB}" for="cadenaTempB" />
+                        <p:inputText id="cadenaTempB" value="#{formatosdetalleController.selected.cadenaTempB}" title="#{bundle.EditFormatosdetalleTitle_cadenaTempB}" />
+                        <p:outputLabel value="#{bundle.EditFormatosdetalleLabel_cadenaTempC}" for="cadenaTempC" />
+                        <p:inputText id="cadenaTempC" value="#{formatosdetalleController.selected.cadenaTempC}" title="#{bundle.EditFormatosdetalleTitle_cadenaTempC}" />
+                        <p:outputLabel value="#{bundle.EditFormatosdetalleLabel_cadenaTempD}" for="cadenaTempD" />
+                        <p:inputText id="cadenaTempD" value="#{formatosdetalleController.selected.cadenaTempD}" title="#{bundle.EditFormatosdetalleTitle_cadenaTempD}" />
+                        <p:outputLabel value="#{bundle.EditFormatosdetalleLabel_cadenaTempE}" for="cadenaTempE" />
+                        <p:inputText id="cadenaTempE" value="#{formatosdetalleController.selected.cadenaTempE}" title="#{bundle.EditFormatosdetalleTitle_cadenaTempE}" />
+                        <p:outputLabel value="#{bundle.EditFormatosdetalleLabel_cadenaTempF}" for="cadenaTempF" />
+                        <p:inputText id="cadenaTempF" value="#{formatosdetalleController.selected.cadenaTempF}" title="#{bundle.EditFormatosdetalleTitle_cadenaTempF}" />
+                        <p:outputLabel value="#{bundle.EditFormatosdetalleLabel_cadenaTempG}" for="cadenaTempG" />
+                        <p:inputText id="cadenaTempG" value="#{formatosdetalleController.selected.cadenaTempG}" title="#{bundle.EditFormatosdetalleTitle_cadenaTempG}" />
+                        <p:outputLabel value="#{bundle.EditFormatosdetalleLabel_cadenaTempH}" for="cadenaTempH" />
+                        <p:inputText id="cadenaTempH" value="#{formatosdetalleController.selected.cadenaTempH}" title="#{bundle.EditFormatosdetalleTitle_cadenaTempH}" />
+                    </p:panelGrid>
+                    <p:commandButton actionListener="#{formatosdetalleController.update}" value="#{bundle.Save}" update="display,:FormatosdetalleListForm:datalist,:growl" oncomplete="handleSubmit(args, 'FormatosdetalleEditDialog');"/>
+                    <p:commandButton value="#{bundle.Cancel}" onclick="FormatosdetalleEditDialog.hide()"/>
+                </h:panelGroup>
+            </h:form>
+        </p:dialog>
+
+    </ui:composition>
+</html>

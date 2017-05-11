@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition>
+
+        <p:dialog id="CiiuEditDlg" widgetVar="CiiuEditDialog" modal="true" resizable="false" appendTo="@(body)" header="#{bundle.EditCiiuTitle}">
+            <h:form id="CiiuEditForm">
+                <h:panelGroup id="display">
+                    <p:panelGrid columns="2" rendered="#{ciiuController.selected != null}">
+                        <p:outputLabel value="#{bundle.EditCiiuLabel_idCiiu}" for="idCiiu" />
+                        <p:inputText id="idCiiu" value="#{ciiuController.selected.idCiiu}" title="#{bundle.EditCiiuTitle_idCiiu}" required="true" requiredMessage="#{bundle.EditCiiuRequiredMessage_idCiiu}"/>
+                        <p:outputLabel value="#{bundle.EditCiiuLabel_codigo}" for="codigo" />
+                        <p:inputText id="codigo" value="#{ciiuController.selected.codigo}" title="#{bundle.EditCiiuTitle_codigo}" required="true" requiredMessage="#{bundle.EditCiiuRequiredMessage_codigo}"/>
+                        <p:outputLabel value="#{bundle.EditCiiuLabel_descripcion}" for="descripcion" />
+                        <p:inputText id="descripcion" value="#{ciiuController.selected.descripcion}" title="#{bundle.EditCiiuTitle_descripcion}" />
+                    </p:panelGrid>
+                    <p:commandButton actionListener="#{ciiuController.update}" value="#{bundle.Save}" update="display,:CiiuListForm:datalist,:growl" oncomplete="handleSubmit(args, 'CiiuEditDialog');"/>
+                    <p:commandButton value="#{bundle.Cancel}" onclick="CiiuEditDialog.hide()"/>
+                </h:panelGroup>
+            </h:form>
+        </p:dialog>
+
+    </ui:composition>
+</html>

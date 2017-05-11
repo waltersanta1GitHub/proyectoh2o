@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated May 10, 2017 9:39:19 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.quimiespel.quimiespelmaven.map.Unidades" table="unidades" catalog="quimirespel" optimistic-lock="version">
+        <id name="idUnidad" type="java.lang.Long">
+            <column name="idUnidad" />
+            <generator class="identity" />
+        </id>
+        <property name="descripcion" type="string">
+            <column name="Descripcion" length="45" />
+        </property>
+    </class>
+</hibernate-mapping>

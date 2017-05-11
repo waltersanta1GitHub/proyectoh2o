@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated May 10, 2017 9:39:19 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.quimiespel.quimiespelmaven.map.Empleados" table="empleados" catalog="quimirespel" optimistic-lock="version">
+        <composite-id name="id" class="com.quimiespel.quimiespelmaven.map.EmpleadosId">
+            <key-property name="idEmpleado" type="long">
+                <column name="idEmpleado" />
+            </key-property>
+            <key-property name="ciudadesId" type="long">
+                <column name="Ciudades_id" />
+            </key-property>
+            <key-property name="cargosId" type="long">
+                <column name="Cargos_id" />
+            </key-property>
+            <key-property name="tipoDocumentoId" type="long">
+                <column name="TipoDocumento_id" />
+            </key-property>
+            <key-property name="areasId" type="long">
+                <column name="Areas_id" />
+            </key-property>
+        </composite-id>
+        <property name="nombre" type="string">
+            <column name="Nombre" length="120" not-null="true" />
+        </property>
+        <property name="apellido" type="string">
+            <column name="Apellido" length="120" not-null="true" />
+        </property>
+        <property name="documento" type="string">
+            <column name="Documento" length="45" not-null="true" />
+        </property>
+        <property name="fechanacimiento" type="date">
+            <column name="Fechanacimiento" length="10" not-null="true" />
+        </property>
+        <property name="telefonoFijo" type="string">
+            <column name="TelefonoFijo" length="45" />
+        </property>
+        <property name="telefonoMovil" type="string">
+            <column name="TelefonoMovil" length="45" not-null="true" />
+        </property>
+        <property name="email" type="string">
+            <column name="Email" length="100" />
+        </property>
+    </class>
+</hibernate-mapping>
