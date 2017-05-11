@@ -1,0 +1,106 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated May 10, 2017 9:39:19 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.quimiespel.quimiespelmaven.map.Formatosdetalle" table="formatosdetalle" catalog="quimirespel" optimistic-lock="version">
+        <composite-id name="id" class="com.quimiespel.quimiespelmaven.map.FormatosdetalleId">
+            <key-property name="idFormatoDetalle" type="long">
+                <column name="idFormatoDetalle" />
+            </key-property>
+            <key-property name="estadoMaterialId" type="long">
+                <column name="EstadoMaterial_id" />
+            </key-property>
+            <key-property name="embalajesId" type="long">
+                <column name="Embalajes_id" />
+            </key-property>
+            <key-property name="unidadesId" type="long">
+                <column name="Unidades_id" />
+            </key-property>
+            <key-property name="formatosEncabezadoId" type="long">
+                <column name="FormatosEncabezado_id" />
+            </key-property>
+        </composite-id>
+        <property name="nombreResiduo" type="string">
+            <column name="NombreResiduo" length="250" not-null="true" />
+        </property>
+        <property name="idLinea" type="int">
+            <column name="idLinea" not-null="true" />
+        </property>
+        <property name="cantidad" type="int">
+            <column name="Cantidad" not-null="true" />
+        </property>
+        <property name="fechaTempA" type="date">
+            <column name="FechaTempA" length="10" />
+        </property>
+        <property name="fechaTempB" type="date">
+            <column name="FechaTempB" length="10" />
+        </property>
+        <property name="fechaTempC" type="date">
+            <column name="FechaTempC" length="10" />
+        </property>
+        <property name="fechaTempD" type="date">
+            <column name="FechaTempD" length="10" />
+        </property>
+        <property name="horaTempA" type="time">
+            <column name="HoraTempA" length="8" />
+        </property>
+        <property name="horaTempB" type="time">
+            <column name="HoraTempB" length="8" />
+        </property>
+        <property name="horaTempC" type="time">
+            <column name="HoraTempC" length="8" />
+        </property>
+        <property name="horaTempD" type="time">
+            <column name="HoraTempD" length="8" />
+        </property>
+        <property name="enteroTempA" type="java.lang.Long">
+            <column name="EnteroTempA" />
+        </property>
+        <property name="enteroTempB" type="java.lang.Long">
+            <column name="EnteroTempB" />
+        </property>
+        <property name="enteroTempC" type="java.lang.Long">
+            <column name="EnteroTempC" />
+        </property>
+        <property name="enteroTempD" type="java.lang.Long">
+            <column name="EnteroTempD" />
+        </property>
+        <property name="booleanoTempA" type="java.lang.Boolean">
+            <column name="BooleanoTempA" />
+        </property>
+        <property name="booleanoTempB" type="java.lang.Boolean">
+            <column name="BooleanoTempB" />
+        </property>
+        <property name="booleanoTempC" type="java.lang.Boolean">
+            <column name="BooleanoTempC" />
+        </property>
+        <property name="booleanoTempD" type="java.lang.Boolean">
+            <column name="BooleanoTempD" />
+        </property>
+        <property name="cadenaTempA" type="string">
+            <column name="CadenaTempA" length="260" />
+        </property>
+        <property name="cadenaTempB" type="string">
+            <column name="CadenaTempB" length="260" />
+        </property>
+        <property name="cadenaTempC" type="string">
+            <column name="CadenaTempC" length="260" />
+        </property>
+        <property name="cadenaTempD" type="string">
+            <column name="CadenaTempD" length="260" />
+        </property>
+        <property name="cadenaTempE" type="string">
+            <column name="CadenaTempE" length="260" />
+        </property>
+        <property name="cadenaTempF" type="string">
+            <column name="CadenaTempF" length="260" />
+        </property>
+        <property name="cadenaTempG" type="string">
+            <column name="CadenaTempG" length="260" />
+        </property>
+        <property name="cadenaTempH" type="string">
+            <column name="CadenaTempH" length="260" />
+        </property>
+    </class>
+</hibernate-mapping>

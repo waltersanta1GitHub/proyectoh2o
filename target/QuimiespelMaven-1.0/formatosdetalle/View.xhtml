@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition>
+
+        <p:dialog id="FormatosdetalleViewDlg" widgetVar="FormatosdetalleViewDialog" modal="true" resizable="false" appendTo="@(body)" header="#{bundle.ViewFormatosdetalleTitle}">
+            <h:form id="FormatosdetalleViewForm">
+                <h:panelGroup id="display">
+                    <p:panelGrid columns="2" rendered="#{formatosdetalleController.selected != null}">
+                        <h:outputText value="#{bundle.ViewFormatosdetalleLabel_nombreResiduo}"/>
+                        <h:outputText value="#{formatosdetalleController.selected.nombreResiduo}" title="#{bundle.ViewFormatosdetalleTitle_nombreResiduo}"/>
+                        <h:outputText value="#{bundle.ViewFormatosdetalleLabel_idLinea}"/>
+                        <h:outputText value="#{formatosdetalleController.selected.idLinea}" title="#{bundle.ViewFormatosdetalleTitle_idLinea}"/>
+                        <h:outputText value="#{bundle.ViewFormatosdetalleLabel_cantidad}"/>
+                        <h:outputText value="#{formatosdetalleController.selected.cantidad}" title="#{bundle.ViewFormatosdetalleTitle_cantidad}"/>
+                        <h:outputText value="#{bundle.ViewFormatosdetalleLabel_fechaTempA}"/>
+                        <h:outputText value="#{formatosdetalleController.selected.fechaTempA}" title="#{bundle.ViewFormatosdetalleTitle_fechaTempA}">
+                            <f:convertDateTime pattern="MM/dd/yyyy" />
+                        </h:outputText>
+                        <h:outputText value="#{bundle.ViewFormatosdetalleLabel_fechaTempB}"/>
+                        <h:outputText value="#{formatosdetalleController.selected.fechaTempB}" title="#{bundle.ViewFormatosdetalleTitle_fechaTempB}">
+                            <f:convertDateTime pattern="MM/dd/yyyy" />
+                        </h:outputText>
+                        <h:outputText value="#{bundle.ViewFormatosdetalleLabel_fechaTempC}"/>
+                        <h:outputText value="#{formatosdetalleController.selected.fechaTempC}" title="#{bundle.ViewFormatosdetalleTitle_fechaTempC}">
+                            <f:convertDateTime pattern="MM/dd/yyyy" />
+                        </h:outputText>
+                        <h:outputText value="#{bundle.ViewFormatosdetalleLabel_fechaTempD}"/>
+                        <h:outputText value="#{formatosdetalleController.selected.fechaTempD}" title="#{bundle.ViewFormatosdetalleTitle_fechaTempD}">
+                            <f:convertDateTime pattern="MM/dd/yyyy" />
+                        </h:outputText>
+                        <h:outputText value="#{bundle.ViewFormatosdetalleLabel_horaTempA}"/>
+                        <h:outputText value="#{formatosdetalleController.selected.horaTempA}" title="#{bundle.ViewFormatosdetalleTitle_horaTempA}">
+                            <f:convertDateTime pattern="HH:mm:ss" />
+                        </h:outputText>
+                        <h:outputText value="#{bundle.ViewFormatosdetalleLabel_horaTempB}"/>
+                        <h:outputText value="#{formatosdetalleController.selected.horaTempB}" title="#{bundle.ViewFormatosdetalleTitle_horaTempB}">
+                            <f:convertDateTime pattern="HH:mm:ss" />
+                        </h:outputText>
+                        <h:outputText value="#{bundle.ViewFormatosdetalleLabel_horaTempC}"/>
+                        <h:outputText value="#{formatosdetalleController.selected.horaTempC}" title="#{bundle.ViewFormatosdetalleTitle_horaTempC}">
+                            <f:convertDateTime pattern="HH:mm:ss" />
+                        </h:outputText>
+                        <h:outputText value="#{bundle.ViewFormatosdetalleLabel_horaTempD}"/>
+                        <h:outputText value="#{formatosdetalleController.selected.horaTempD}" title="#{bundle.ViewFormatosdetalleTitle_horaTempD}">
+                            <f:convertDateTime pattern="HH:mm:ss" />
+                        </h:outputText>
+                        <h:outputText value="#{bundle.ViewFormatosdetalleLabel_enteroTempA}"/>
+                        <h:outputText value="#{formatosdetalleController.selected.enteroTempA}" title="#{bundle.ViewFormatosdetalleTitle_enteroTempA}"/>
+                        <h:outputText value="#{bundle.ViewFormatosdetalleLabel_enteroTempB}"/>
+                        <h:outputText value="#{formatosdetalleController.selected.enteroTempB}" title="#{bundle.ViewFormatosdetalleTitle_enteroTempB}"/>
+                        <h:outputText value="#{bundle.ViewFormatosdetalleLabel_enteroTempC}"/>
+                        <h:outputText value="#{formatosdetalleController.selected.enteroTempC}" title="#{bundle.ViewFormatosdetalleTitle_enteroTempC}"/>
+                        <h:outputText value="#{bundle.ViewFormatosdetalleLabel_enteroTempD}"/>
+                        <h:outputText value="#{formatosdetalleController.selected.enteroTempD}" title="#{bundle.ViewFormatosdetalleTitle_enteroTempD}"/>
+                        <h:outputText value="#{bundle.ViewFormatosdetalleLabel_booleanoTempA}"/>
+                        <p:selectBooleanCheckbox value="#{formatosdetalleController.selected.booleanoTempA}" disabled="true"/>
+                        <h:outputText value="#{bundle.ViewFormatosdetalleLabel_booleanoTempB}"/>
+                        <p:selectBooleanCheckbox value="#{formatosdetalleController.selected.booleanoTempB}" disabled="true"/>
+                        <h:outputText value="#{bundle.ViewFormatosdetalleLabel_booleanoTempC}"/>
+                        <p:selectBooleanCheckbox value="#{formatosdetalleController.selected.booleanoTempC}" disabled="true"/>
+                        <h:outputText value="#{bundle.ViewFormatosdetalleLabel_booleanoTempD}"/>
+                        <p:selectBooleanCheckbox value="#{formatosdetalleController.selected.booleanoTempD}" disabled="true"/>
+                        <h:outputText value="#{bundle.ViewFormatosdetalleLabel_cadenaTempA}"/>
+                        <h:outputText value="#{formatosdetalleController.selected.cadenaTempA}" title="#{bundle.ViewFormatosdetalleTitle_cadenaTempA}"/>
+                        <h:outputText value="#{bundle.ViewFormatosdetalleLabel_cadenaTempB}"/>
+                        <h:outputText value="#{formatosdetalleController.selected.cadenaTempB}" title="#{bundle.ViewFormatosdetalleTitle_cadenaTempB}"/>
+                        <h:outputText value="#{bundle.ViewFormatosdetalleLabel_cadenaTempC}"/>
+                        <h:outputText value="#{formatosdetalleController.selected.cadenaTempC}" title="#{bundle.ViewFormatosdetalleTitle_cadenaTempC}"/>
+                        <h:outputText value="#{bundle.ViewFormatosdetalleLabel_cadenaTempD}"/>
+                        <h:outputText value="#{formatosdetalleController.selected.cadenaTempD}" title="#{bundle.ViewFormatosdetalleTitle_cadenaTempD}"/>
+                        <h:outputText value="#{bundle.ViewFormatosdetalleLabel_cadenaTempE}"/>
+                        <h:outputText value="#{formatosdetalleController.selected.cadenaTempE}" title="#{bundle.ViewFormatosdetalleTitle_cadenaTempE}"/>
+                        <h:outputText value="#{bundle.ViewFormatosdetalleLabel_cadenaTempF}"/>
+                        <h:outputText value="#{formatosdetalleController.selected.cadenaTempF}" title="#{bundle.ViewFormatosdetalleTitle_cadenaTempF}"/>
+                        <h:outputText value="#{bundle.ViewFormatosdetalleLabel_cadenaTempG}"/>
+                        <h:outputText value="#{formatosdetalleController.selected.cadenaTempG}" title="#{bundle.ViewFormatosdetalleTitle_cadenaTempG}"/>
+                        <h:outputText value="#{bundle.ViewFormatosdetalleLabel_cadenaTempH}"/>
+                        <h:outputText value="#{formatosdetalleController.selected.cadenaTempH}" title="#{bundle.ViewFormatosdetalleTitle_cadenaTempH}"/>
+                    </p:panelGrid>
+                    <p:commandButton value="#{bundle.Close}" onclick="FormatosdetalleViewDialog.hide()"/>
+                </h:panelGroup>
+            </h:form>
+        </p:dialog>
+
+    </ui:composition>
+</html>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition>
+
+        <p:dialog id="CargosCreateDlg" widgetVar="CargosCreateDialog" modal="true" resizable="false" appendTo="@(body)" header="#{bundle.CreateCargosTitle}">
+            <h:form id="CargosCreateForm">
+                <h:panelGroup id="display">
+                    <p:panelGrid columns="2" rendered="#{cargosController.selected != null}">
+                        <p:outputLabel value="#{bundle.CreateCargosLabel_idCargo}" for="idCargo" />
+                        <p:inputText id="idCargo" value="#{cargosController.selected.idCargo}" title="#{bundle.CreateCargosTitle_idCargo}" required="true" requiredMessage="#{bundle.CreateCargosRequiredMessage_idCargo}"/>
+                        <p:outputLabel value="#{bundle.CreateCargosLabel_descripcion}" for="descripcion" />
+                        <p:inputText id="descripcion" value="#{cargosController.selected.descripcion}" title="#{bundle.CreateCargosTitle_descripcion}" required="true" requiredMessage="#{bundle.CreateCargosRequiredMessage_descripcion}"/>
+                    </p:panelGrid>
+                    <p:commandButton actionListener="#{cargosController.create}" value="#{bundle.Save}" update="display,:CargosListForm:datalist,:growl" oncomplete="handleSubmit(args,'CargosCreateDialog');"/>
+                    <p:commandButton value="#{bundle.Cancel}" onclick="CargosCreateDialog.hide()"/>
+                </h:panelGroup>
+            </h:form>
+        </p:dialog>
+
+    </ui:composition>
+</html>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition>
+
+        <p:dialog id="TipoformatoCreateDlg" widgetVar="TipoformatoCreateDialog" modal="true" resizable="false" appendTo="@(body)" header="#{bundle.CreateTipoformatoTitle}">
+            <h:form id="TipoformatoCreateForm">
+                <h:panelGroup id="display">
+                    <p:panelGrid columns="2" rendered="#{tipoformatoController.selected != null}">
+                        <p:outputLabel value="#{bundle.CreateTipoformatoLabel_idTipoFormato}" for="idTipoFormato" />
+                        <p:inputText id="idTipoFormato" value="#{tipoformatoController.selected.idTipoFormato}" title="#{bundle.CreateTipoformatoTitle_idTipoFormato}" required="true" requiredMessage="#{bundle.CreateTipoformatoRequiredMessage_idTipoFormato}"/>
+                        <p:outputLabel value="#{bundle.CreateTipoformatoLabel_descripcion}" for="descripcion" />
+                        <p:inputText id="descripcion" value="#{tipoformatoController.selected.descripcion}" title="#{bundle.CreateTipoformatoTitle_descripcion}" />
+                    </p:panelGrid>
+                    <p:commandButton actionListener="#{tipoformatoController.create}" value="#{bundle.Save}" update="display,:TipoformatoListForm:datalist,:growl" oncomplete="handleSubmit(args,'TipoformatoCreateDialog');"/>
+                    <p:commandButton value="#{bundle.Cancel}" onclick="TipoformatoCreateDialog.hide()"/>
+                </h:panelGroup>
+            </h:form>
+        </p:dialog>
+
+    </ui:composition>
+</html>

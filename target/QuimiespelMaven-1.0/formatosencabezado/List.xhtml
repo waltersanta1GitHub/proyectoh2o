@@ -1,0 +1,294 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition template="/template.xhtml">
+
+
+        <ui:define name="title">
+            <h:outputText value="#{bundle.ListFormatosencabezadoTitle}"></h:outputText>
+        </ui:define>
+
+        <ui:define name="body">
+            <h:form id="FormatosencabezadoListForm">
+                <p:panel header="#{bundle.ListFormatosencabezadoTitle}">
+                    <p:dataTable id="datalist" value="#{formatosencabezadoController.items}" var="item"
+                                 selectionMode="single" selection="#{formatosencabezadoController.selected}"
+                                 paginator="true"
+                                 rowKey="#{item.id}"
+                                 rows="10"
+                                 rowsPerPageTemplate="10,20,30,40,50"
+                                 >
+
+                        <p:ajax event="rowSelect"   update="createButton viewButton editButton deleteButton"/>
+                        <p:ajax event="rowUnselect" update="createButton viewButton editButton deleteButton"/>
+
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListFormatosencabezadoTitle_razonSocial}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.razonSocial}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListFormatosencabezadoTitle_nit}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.nit}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListFormatosencabezadoTitle_telefono}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.telefono}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListFormatosencabezadoTitle_direccion}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.direccion}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListFormatosencabezadoTitle_latitud}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.latitud}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListFormatosencabezadoTitle_logitud}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.logitud}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListFormatosencabezadoTitle_nombreContacto}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.nombreContacto}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListFormatosencabezadoTitle_telefonoContacto}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.telefonoContacto}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListFormatosencabezadoTitle_email}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.email}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListFormatosencabezadoTitle_numVisita}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.numVisita}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListFormatosencabezadoTitle_fechaVisita}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.fechaVisita}">
+                                <f:convertDateTime pattern="MM/dd/yyyy" />
+                            </h:outputText>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListFormatosencabezadoTitle_horaVisita}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.horaVisita}">
+                                <f:convertDateTime pattern="HH:mm:ss" />
+                            </h:outputText>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListFormatosencabezadoTitle_especificacionSeguridad}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.especificacionSeguridad}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListFormatosencabezadoTitle_especificacionAdicional}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.especificacionAdicional}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListFormatosencabezadoTitle_fechaTempA}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.fechaTempA}">
+                                <f:convertDateTime pattern="MM/dd/yyyy" />
+                            </h:outputText>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListFormatosencabezadoTitle_fechaTempB}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.fechaTempB}">
+                                <f:convertDateTime pattern="MM/dd/yyyy" />
+                            </h:outputText>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListFormatosencabezadoTitle_fechaTempC}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.fechaTempC}">
+                                <f:convertDateTime pattern="MM/dd/yyyy" />
+                            </h:outputText>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListFormatosencabezadoTitle_fechaTempD}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.fechaTempD}">
+                                <f:convertDateTime pattern="MM/dd/yyyy" />
+                            </h:outputText>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListFormatosencabezadoTitle_horaTempA}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.horaTempA}">
+                                <f:convertDateTime pattern="HH:mm:ss" />
+                            </h:outputText>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListFormatosencabezadoTitle_horaTempB}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.horaTempB}">
+                                <f:convertDateTime pattern="HH:mm:ss" />
+                            </h:outputText>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListFormatosencabezadoTitle_horaTempC}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.horaTempC}">
+                                <f:convertDateTime pattern="HH:mm:ss" />
+                            </h:outputText>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListFormatosencabezadoTitle_horaTempD}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.horaTempD}">
+                                <f:convertDateTime pattern="HH:mm:ss" />
+                            </h:outputText>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListFormatosencabezadoTitle_enteroTempA}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.enteroTempA}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListFormatosencabezadoTitle_enteroTempB}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.enteroTempB}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListFormatosencabezadoTitle_enteroTempC}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.enteroTempC}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListFormatosencabezadoTitle_enteroTempD}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.enteroTempD}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListFormatosencabezadoTitle_booleanoTempA}"/>
+                            </f:facet>
+                            <p:selectBooleanCheckbox value="#{item.booleanoTempA}" disabled="true"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListFormatosencabezadoTitle_booleanoTempB}"/>
+                            </f:facet>
+                            <p:selectBooleanCheckbox value="#{item.booleanoTempB}" disabled="true"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListFormatosencabezadoTitle_booleanoTempC}"/>
+                            </f:facet>
+                            <p:selectBooleanCheckbox value="#{item.booleanoTempC}" disabled="true"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListFormatosencabezadoTitle_booleanoTempD}"/>
+                            </f:facet>
+                            <p:selectBooleanCheckbox value="#{item.booleanoTempD}" disabled="true"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListFormatosencabezadoTitle_cadenaTempA}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.cadenaTempA}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListFormatosencabezadoTitle_cadenaTempB}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.cadenaTempB}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListFormatosencabezadoTitle_cadenaTempC}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.cadenaTempC}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListFormatosencabezadoTitle_cadenaTempD}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.cadenaTempD}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListFormatosencabezadoTitle_cadenaTempE}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.cadenaTempE}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListFormatosencabezadoTitle_cadenaTempF}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.cadenaTempF}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListFormatosencabezadoTitle_cadenaTempG}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.cadenaTempG}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListFormatosencabezadoTitle_cadenaTempH}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.cadenaTempH}"/>
+                        </p:column>
+                        <f:facet name="footer">
+                            <p:commandButton id="createButton" icon="ui-icon-plus"   value="#{bundle.Create}" actionListener="#{formatosencabezadoController.prepareCreate}" update=":FormatosencabezadoCreateForm" oncomplete="PF('FormatosencabezadoCreateDialog').show()"/>
+                            <p:commandButton id="viewButton"   icon="ui-icon-search" value="#{bundle.View}" update=":FormatosencabezadoViewForm" oncomplete="PF('FormatosencabezadoViewDialog').show()" disabled="#{empty formatosencabezadoController.selected}"/>
+                            <p:commandButton id="editButton"   icon="ui-icon-pencil" value="#{bundle.Edit}" update=":FormatosencabezadoEditForm" oncomplete="PF('FormatosencabezadoEditDialog').show()" disabled="#{empty formatosencabezadoController.selected}"/>
+                            <p:commandButton id="deleteButton" icon="ui-icon-trash"  value="#{bundle.Delete}" actionListener="#{formatosencabezadoController.destroy}" update=":growl,datalist" disabled="#{empty formatosencabezadoController.selected}"/>
+                        </f:facet>
+                    </p:dataTable>
+                </p:panel>
+            </h:form>
+
+            <ui:include src="Create.xhtml"/>
+            <ui:include src="Edit.xhtml"/>
+            <ui:include src="View.xhtml"/>
+        </ui:define>
+    </ui:composition>
+
+</html>
